@@ -46,3 +46,7 @@ add_action('plugins_loaded', function () {
         require_once __DIR__ . '/includes/ifthenpay.php';
     }
 });
+
+if (is_admin()){
+    require_once __DIR__ . '/includes/admin.php';
+}
