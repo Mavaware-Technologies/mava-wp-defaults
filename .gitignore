@@ -1,0 +1,10 @@
+```gitignore
+/vendor/
+/node_modules/
+/.DS_Store
+*.log
+composer.lock
+.idea/
+.env
+.env.*
+build/
