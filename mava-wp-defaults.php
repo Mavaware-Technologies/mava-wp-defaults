@@ -2,7 +2,7 @@
 /*
 Plugin Name: Mava Defaults
 Description: Plugin com definições comuns a todas as instalações.
-Version: 1.0.0
+Version: 1.1.2
 Author: Mava
 Author URI: https://mava.pt
 */
@@ -43,6 +43,6 @@ add_action('plugins_loaded', function () {
     // }
 
     if (is_plugin_active('multibanco-ifthen-software-gateway-for-woocommerce/multibanco_ifthen_for_woocommerce.php')) {
-        require_once __DIR__ . '/includes/ifthen.php';
+        require_once __DIR__ . '/includes/ifthenpay.php';
     }
 });
