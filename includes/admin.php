@@ -20,6 +20,11 @@ if ( ! function_exists( 'wp_password_change_notification' ) ) {
  * Add contact form on dashboard
  */
 add_action('wp_dashboard_setup', function () {
+    remove_meta_box('dashboard_primary', 'dashboard', 'side');     // Notícias
+    remove_meta_box('dashboard_welcome', 'dashboard', 'normal'); 
+    // remove_meta_box('dashboard_quick_press', 'dashboard', 'side'); // Rascunho rápido
+    remove_meta_box('dashboard_activity', 'dashboard', 'normal');  // Atividade
+    
     wp_add_dashboard_widget('mava_support_widget', '📩 Suporte', 'mava_render_support_form');
 });
 
