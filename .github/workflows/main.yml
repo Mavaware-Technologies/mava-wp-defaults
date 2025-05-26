@@ -1,0 +1,28 @@
+name: Build and attach plugin ZIP on release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Create ZIP of plugin
+        run: |
+          mkdir -p build
+          zip -r build/mava-wp-defaults.zip . -x '*.git*' -x 'build/*'
+
+      - name: Upload ZIP to release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/mava-wp-defaults.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
