@@ -1,5 +1,5 @@
 {
-  "name": "Mavaware-Technologies/mava-defaults",
+  "name": "mavaware-technologies/mava-wp-defaults",
   "description": "Plugin com definições comuns a todas as instalações WordPress geridas pela Mava.",
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
@@ -10,5 +10,7 @@
     "psr-4": {
       "Mava\\Defaults\\": "includes/"
     }
-  }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
