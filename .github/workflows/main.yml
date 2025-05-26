@@ -15,14 +15,19 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-dev --optimize-autoloader
 
-      - name: Create ZIP of plugin
+      - name: Create plugin folder
         run: |
-          mkdir -p build
-          zip -r build/mava-wp-defaults.zip . -x '*.git*' -x 'build/*'
+          mkdir mava-wp-defaults
+          rsync -av --exclude='.git*' --exclude='build' ./ mava-wp-defaults/
+
+      - name: Zip plugin with vendor
+        run: |
+          cd mava-wp-defaults
+          zip -r ../mava-wp-defaults.zip ./
 
       - name: Upload ZIP to release
         uses: softprops/action-gh-release@v1
         with:
-          files: build/mava-wp-defaults.zip
+          files: mava-wp-defaults.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
