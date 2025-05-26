@@ -2,7 +2,7 @@
 /*
 Plugin Name: Mava Defaults
 Description: Plugin com definições comuns a todas as instalações.
-Version: 1.2.0
+Version: 1.3.1
 Author: Mava
 Author URI: https://mava.pt
 */
